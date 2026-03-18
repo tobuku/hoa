@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find HOA attorneys by state. Directory of homeowners association lawyers who represent members — not just boards — in HOA disputes.">
+  <title>HOA Attorney Directory | HOA Member Rights</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .attorney-card { background: var(--white); border: 1.5px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.5rem; transition: all var(--transition); }
+    .attorney-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); }
+    .attorney-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+    .attorney-firm { font-family: var(--font-ui); font-size: .875rem; color: var(--gray-600); margin: .2rem 0 .75rem; }
+    .attorney-specialties { display: flex; flex-wrap: wrap; gap: .4rem; margin: .75rem 0; }
+    .attorney-note { font-family: var(--font-ui); font-size: .75rem; color: var(--gray-400); font-style: italic; margin-top: .75rem; }
+    .sample-badge { background: var(--gold-pale); color: #7a5800; font-family: var(--font-ui); font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: .15rem .5rem; border-radius: 2rem; }
+    .how-to-card { background: var(--off-white); border-radius: var(--radius-lg); padding: 1.75rem; border: 1px solid var(--gray-200); }
+    .how-to-card h3 { font-size: 1.1rem; margin-bottom: .5rem; }
+    .how-to-card p { font-family: var(--font-ui); font-size: .9rem; color: var(--gray-600); }
+    .how-to-card .source-note { font-size: .78rem; color: var(--gold); font-weight: 600; margin-top: .5rem; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav__inner">
+    <a href="/hoa/" class="nav__brand">
+      <div class="nav__logo-mark">H</div>
+      <div class="nav__brand-text">
+        <span class="nav__brand-main">HOA Member Rights</span>
+        <span class="nav__brand-sub">Know Your Association</span>
+      </div>
+    </a>
+    <ul class="nav__links">
+      <li><a href="/hoa/">Home</a></li>
+      <li><a href="/hoa/rights/">Know Your Rights</a></li>
+      <li><a href="/hoa/states/">Find Your State</a></li>
+      <li><a href="/hoa/attorneys/" class="active">Attorneys</a></li>
+      <li><a href="/hoa/documents/">Free Documents</a></li>
+      <li><a href="/hoa/reviews/">Reviews</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <ul class="breadcrumb__list">
+      <li><a href="/hoa/">Home</a></li>
+      <li class="breadcrumb__sep">›</li>
+      <li>Attorney Directory</li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero__inner">
+    <p class="eyebrow">Attorney Directory</p>
+    <h1>Find an HOA Attorney in Your State</h1>
+    <p class="lead">HOA law is specialized. These resources will help you find attorneys who understand community association law — and represent members, not just boards.</p>
+  </div>
+</section>
+
+<main>
+
+  <!-- Important Note -->
+  <section class="section--sm">
+    <div class="container">
+      <div class="alert alert--warn">
+        <p><strong>Important:</strong> This directory is for informational purposes only. Listings are not endorsements. Always verify an attorney's credentials, current bar status, and relevant experience before hiring. This site does not receive referral fees.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Find an HOA Attorney -->
+  <section class="section" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Where to Search</p>
+        <h2>How to Find an HOA Attorney</h2>
+        <p class="lead">These are the most reliable ways to find a qualified HOA attorney who represents homeowners.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="how-to-card">
+          <h3>🏛️ Community Associations Institute (CAI)</h3>
+          <p>CAI is the national trade organization for community association professionals. Their attorney members are searchable by state. Look specifically for attorneys whose practice focuses on member representation, not board counsel.</p>
+          <p class="source-note">Search: "CAI attorney directory" at caionline.org</p>
+        </div>
+        <div class="how-to-card">
+          <h3>⚖️ State Bar Referral Services</h3>
+          <p>Every state bar association operates a lawyer referral service. HOA attorneys are typically listed under Real Estate Law or Community Associations. Many offer a free or low-cost initial consultation.</p>
+          <p class="source-note">Search: "[your state] bar lawyer referral service"</p>
+        </div>
+        <div class="how-to-card">
+          <h3>🔍 Online Legal Directories</h3>
+          <p>Martindale-Hubbell, Avvo, and FindLaw allow you to filter by practice area and location. Search "homeowners association attorney" + your state. Read peer reviews and client reviews separately.</p>
+          <p class="source-note">Look for: peer ratings, HOA-specific experience, member-side cases</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- State Filter + Directory -->
+  <section class="section" style="background: var(--off-white); padding: 4rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Directory</p>
+        <h2>Attorney Listings by State</h2>
+        <p class="lead">Filter by state to find attorneys. <span class="sample-badge">Sample listings below</span> — submit your practice to be included.</p>
+      </div>
+
+      <div class="form-group" style="max-width: 320px; margin: 0 auto 2.5rem;">
+        <label for="attorney-state-filter">Filter by State</label>
+        <select id="attorney-state-filter">
+          <option value="">All States</option>
+          <option value="HI">Hawaii</option>
+          <option value="CA">California</option>
+          <option value="FL">Florida</option>
+          <option value="TX">Texas</option>
+          <option value="AZ">Arizona</option>
+          <option value="NV">Nevada</option>
+          <option value="CO">Colorado</option>
+          <option value="WA">Washington</option>
+        </select>
+      </div>
+
+      <div class="grid grid--3" id="attorney-listings">
+
+        <div class="attorney-card" data-state="HI">
+          <div class="flex flex--between mb-1">
+            <span class="tag">Hawaii</span>
+            <span class="sample-badge">Sample Listing</span>
+          </div>
+          <div class="attorney-name">Example: HOA Member Counsel</div>
+          <div class="attorney-firm">Community Rights Law Group — Honolulu, HI</div>
+          <div class="attorney-specialties">
+            <span class="tag tag--navy">Member Rights</span>
+            <span class="tag tag--navy">HOA Disputes</span>
+            <span class="tag tag--navy">Mediation</span>
+          </div>
+          <p style="font-family: var(--font-ui); font-size: .85rem; color: var(--gray-600);">Specializes in HRS 421J and 514B disputes. Represents homeowners in board disputes, assessment challenges, and insurance claims.</p>
+          <p class="attorney-note">This is a sample listing showing the format. Submit your practice to be listed.</p>
+          <a href="/hoa/contact/?subject=attorney" class="btn btn--outline-navy btn--sm mt-3">Submit Your Practice</a>
+        </div>
+
+        <div class="attorney-card" data-state="CA">
+          <div class="flex flex--between mb-1">
+            <span class="tag">California</span>
+            <span class="sample-badge">Sample Listing</span>
+          </div>
+          <div class="attorney-name">Example: Davis-Stirling Advocate</div>
+          <div class="attorney-firm">Homeowner Rights APLC — Los Angeles, CA</div>
+          <div class="attorney-specialties">
+            <span class="tag tag--navy">Davis-Stirling Act</span>
+            <span class="tag tag--navy">Election Disputes</span>
+            <span class="tag tag--navy">Records Requests</span>
+          </div>
+          <p style="font-family: var(--font-ui); font-size: .85rem; color: var(--gray-600);">Focuses exclusively on homeowner-side Davis-Stirling disputes. Experience with IDR/ADR processes and election integrity challenges.</p>
+          <p class="attorney-note">This is a sample listing showing the format. Submit your practice to be listed.</p>
+          <a href="/hoa/contact/?subject=attorney" class="btn btn--outline-navy btn--sm mt-3">Submit Your Practice</a>
+        </div>
+
+        <div class="attorney-card" data-state="FL">
+          <div class="flex flex--between mb-1">
+            <span class="tag">Florida</span>
+            <span class="sample-badge">Sample Listing</span>
+          </div>
+          <div class="attorney-name">Example: Chapter 720 Counsel</div>
+          <div class="attorney-firm">Florida HOA Member Law — Tampa, FL</div>
+          <div class="attorney-specialties">
+            <span class="tag tag--navy">Chapter 720</span>
+            <span class="tag tag--navy">Fines Defense</span>
+            <span class="tag tag--navy">Assessment Disputes</span>
+          </div>
+          <p style="font-family: var(--font-ui); font-size: .85rem; color: var(--gray-600);">Handles Florida HOA fines defense, records disputes, and board recall proceedings under Chapter 720.</p>
+          <p class="attorney-note">This is a sample listing showing the format. Submit your practice to be listed.</p>
+          <a href="/hoa/contact/?subject=attorney" class="btn btn--outline-navy btn--sm mt-3">Submit Your Practice</a>
+        </div>
+
+        <div class="attorney-card" data-state="TX">
+          <div class="flex flex--between mb-1">
+            <span class="tag">Texas</span>
+            <span class="sample-badge">Sample Listing</span>
+          </div>
+          <div class="attorney-name">Example: Texas Property Code Specialist</div>
+          <div class="attorney-firm">Lone Star HOA Rights — Austin, TX</div>
+          <div class="attorney-specialties">
+            <span class="tag tag--navy">Chapter 209</span>
+            <span class="tag tag--navy">Foreclosure Defense</span>
+            <span class="tag tag--navy">SB 1588</span>
+          </div>
+          <p style="font-family: var(--font-ui); font-size: .85rem; color: var(--gray-600);">Texas HOA member representation including foreclosure defense, assessment disputes, and SB 1588 rights enforcement.</p>
+          <p class="attorney-note">This is a sample listing showing the format. Submit your practice to be listed.</p>
+          <a href="/hoa/contact/?subject=attorney" class="btn btn--outline-navy btn--sm mt-3">Submit Your Practice</a>
+        </div>
+
+        <div class="attorney-card" data-state="AZ">
+          <div class="flex flex--between mb-1">
+            <span class="tag">Arizona</span>
+            <span class="sample-badge">Sample Listing</span>
+          </div>
+          <div class="attorney-name">Example: AZ Planned Community Advocate</div>
+          <div class="attorney-firm">Southwest HOA Law Group — Phoenix, AZ</div>
+          <div class="attorney-specialties">
+            <span class="tag tag--navy">ARS §33-1801</span>
+            <span class="tag tag--navy">OAH Hearings</span>
+            <span class="tag tag--navy">Member Rights</span>
+          </div>
+          <p style="font-family: var(--font-ui); font-size: .85rem; color: var(--gray-600);">Represents Arizona HOA members before the Office of Administrative Hearings and in civil court. Free initial consultation.</p>
+          <p class="attorney-note">This is a sample listing showing the format. Submit your practice to be listed.</p>
+          <a href="/hoa/contact/?subject=attorney" class="btn btn--outline-navy btn--sm mt-3">Submit Your Practice</a>
+        </div>
+
+        <div class="attorney-card" style="background: var(--gold-pale); border-color: var(--gold); border-style: dashed;">
+          <div class="card__title" style="margin-bottom: .5rem;">Your Practice Here</div>
+          <p style="font-family: var(--font-ui); font-size: .9rem; color: var(--gray-600); margin-bottom: 1rem;">Do you represent HOA members? Get a free listing in our directory. We list attorneys who represent homeowners — not boards.</p>
+          <a href="/hoa/contact/" class="btn btn--gold btn--sm">Submit Free Listing →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Questions to Ask -->
+  <section class="section">
+    <div class="container container--narrow">
+      <p class="eyebrow">Before You Hire</p>
+      <h2>Questions to Ask an HOA Attorney</h2>
+      <p class="lead" style="margin-bottom: 2rem;">Not all HOA attorneys represent homeowners. Many primarily represent HOA boards and management companies. Ask these questions before committing.</p>
+
+      <div class="article-content">
+        <ol>
+          <li><strong>Do you specialize in community association law?</strong> HOA law is a distinct specialty. General real estate attorneys may not know your state's HOA statutes well enough.</li>
+          <li><strong>Do you primarily represent HOA members or HOA boards?</strong> An attorney who spends 90% of their time representing boards may have a different perspective than you need.</li>
+          <li><strong>Have you handled cases similar to mine?</strong> Fines disputes, insurance claims, election challenges, and records request violations each have different legal considerations.</li>
+          <li><strong>What is your experience with [my state's] HOA statutes?</strong> State law matters enormously — Hawaii's HRS 421J is very different from California's Davis-Stirling Act.</li>
+          <li><strong>What are your fees and how are they structured?</strong> Hourly vs. flat-fee vs. contingency. Ask for an estimate of total cost for your situation.</li>
+          <li><strong>Do you offer a free or reduced-cost initial consultation?</strong> Many HOA attorneys do. Use it to assess fit before committing.</li>
+          <li><strong>Does my state have a fee-shifting statute?</strong> In some states, if you win an HOA dispute, the HOA may be required to pay your attorney fees. Ask if this applies to your situation.</li>
+          <li><strong>Have you been before the [state HOA regulatory body or OAH]?</strong> Some state agencies handle HOA disputes at lower cost than court. An attorney familiar with these processes can save you money.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="newsletter-strip">
+  <div class="container newsletter-strip__inner">
+    <div>
+      <h3>Stay Informed on HOA Law</h3>
+      <p>New attorney listings, state law updates, and member rights guides — free.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="Your email address" aria-label="Email address">
+      <button type="submit" class="btn btn--gold">Subscribe Free</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brand-name">HOA Member Rights</div>
+        <p class="footer__brand-desc">Your free resource for HOA laws, member rights, and dispute navigation.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Resources</div>
+        <ul class="footer__links">
+          <li><a href="/hoa/rights/">Know Your Rights</a></li>
+          <li><a href="/hoa/states/">Find Your State</a></li>
+          <li><a href="/hoa/attorneys/">Attorney Directory</a></li>
+          <li><a href="/hoa/documents/">Free Documents</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Information</div>
+        <ul class="footer__links">
+          <li><a href="/hoa/about/">About This Site</a></li>
+          <li><a href="/hoa/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer__disclaimer">
+    <div class="container">
+      <p><strong>Legal Disclaimer:</strong> The content on this site is for educational and informational purposes only and reflects the personal experiences and opinions of the author. Nothing on this site constitutes legal advice or creates an attorney-client relationship. HOA laws vary significantly by state and local jurisdiction. Always consult a licensed attorney in your state for advice about your specific situation.</p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__bottom-inner">
+        <span class="footer__copyright">© 2025 HOA Member Rights. All rights reserved.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

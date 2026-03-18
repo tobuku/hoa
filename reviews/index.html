@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rate and review HOA management companies. Share your experience to help other homeowners make informed decisions about their community association management.">
+  <title>HOA Management Company Reviews | HOA Member Rights</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .star-rating { display: flex; gap: .25rem; }
+    .star { font-size: 1.25rem; color: var(--gold); }
+    .star.empty { color: var(--gray-200); }
+    .review-card { background: var(--white); border: 1.5px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.25rem; }
+    .review-card:hover { border-color: var(--gold); box-shadow: var(--shadow-sm); }
+    .review-company { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+    .review-meta { font-family: var(--font-ui); font-size: .8125rem; color: var(--gray-400); margin: .25rem 0 .75rem; }
+    .review-body { font-family: var(--font-body); font-size: .9375rem; line-height: 1.7; color: var(--gray-800); }
+    .review-categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: .5rem; margin: .75rem 0; }
+    .review-category { font-family: var(--font-ui); font-size: .8rem; color: var(--gray-600); display: flex; justify-content: space-between; align-items: center; }
+    .review-category-stars { color: var(--gold); font-size: .9rem; }
+    .sample-notice { background: var(--gold-pale); border: 1px solid rgba(201,162,39,.3); border-radius: var(--radius); padding: .4rem .75rem; font-family: var(--font-ui); font-size: .72rem; font-weight: 600; color: #7a5800; text-transform: uppercase; letter-spacing: .06em; display: inline-block; margin-bottom: .75rem; }
+    /* Star radio inputs */
+    .star-input-group { display: flex; flex-direction: row-reverse; gap: .25rem; }
+    .star-input-group input { display: none; }
+    .star-input-group label { font-size: 1.75rem; color: var(--gray-200); cursor: pointer; transition: color var(--transition); }
+    .star-input-group input:checked ~ label,
+    .star-input-group label:hover,
+    .star-input-group label:hover ~ label { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav__inner">
+    <a href="/hoa/" class="nav__brand">
+      <div class="nav__logo-mark">H</div>
+      <div class="nav__brand-text">
+        <span class="nav__brand-main">HOA Member Rights</span>
+        <span class="nav__brand-sub">Know Your Association</span>
+      </div>
+    </a>
+    <ul class="nav__links">
+      <li><a href="/hoa/">Home</a></li>
+      <li><a href="/hoa/rights/">Know Your Rights</a></li>
+      <li><a href="/hoa/states/">Find Your State</a></li>
+      <li><a href="/hoa/attorneys/">Attorneys</a></li>
+      <li><a href="/hoa/documents/">Free Documents</a></li>
+      <li><a href="/hoa/reviews/" class="active">Reviews</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<nav class="breadcrumb">
+  <div class="container">
+    <ul class="breadcrumb__list">
+      <li><a href="/hoa/">Home</a></li>
+      <li class="breadcrumb__sep">›</li>
+      <li>Reviews</li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero__inner">
+    <p class="eyebrow">Community Reviews</p>
+    <h1>Rate Your HOA Management Company</h1>
+    <p class="lead">Management companies work for the board — but the board works for you. Share your experience to hold management companies accountable and help other homeowners make informed decisions.</p>
+  </div>
+</section>
+
+<main>
+
+  <!-- Alert -->
+  <section class="section--sm">
+    <div class="container">
+      <div class="alert">
+        <p><strong>Review Policy:</strong> Reviews are submitted by HOA members and reflect their personal experiences. We do not verify individual reviews. We reserve the right to remove content that is defamatory, includes personal information about private individuals, or violates our terms. Always conduct your own research before making decisions about your HOA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Submit Form -->
+  <section class="section" style="background: var(--off-white); padding: 4rem 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+
+        <div>
+          <p class="eyebrow">Submit a Review</p>
+          <h2>Share Your Experience</h2>
+          <p style="font-family: var(--font-ui); color: var(--gray-600); margin: 1rem 0 2rem;">Your review helps other homeowners know what to expect from HOA management companies in their area. Be specific, be factual, and focus on behaviors you personally experienced.</p>
+
+          <form action="mailto:reviews@hoamemberrights.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="r-company">Management Company Name *</label>
+              <input type="text" id="r-company" name="company" placeholder="e.g., Acme Property Management" required>
+            </div>
+            <div class="form-group">
+              <label for="r-state">State *</label>
+              <select id="r-state" name="state" required>
+                <option value="">Select your state…</option>
+                <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+                <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+                <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+                <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+                <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+                <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+                <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+                <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+                <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+                <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+                <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+                <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+                <option>Wisconsin</option><option>Wyoming</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="r-assoc">Association Name (optional — for privacy you may omit)</label>
+              <input type="text" id="r-assoc" name="association" placeholder="e.g., Sunset Ridge HOA (optional)">
+            </div>
+
+            <div class="form-group">
+              <label>Overall Rating *</label>
+              <div class="star-input-group" aria-label="Overall rating">
+                <input type="radio" id="s5" name="rating" value="5"><label for="s5">★</label>
+                <input type="radio" id="s4" name="rating" value="4"><label for="s4">★</label>
+                <input type="radio" id="s3" name="rating" value="3"><label for="s3">★</label>
+                <input type="radio" id="s2" name="rating" value="2"><label for="s2">★</label>
+                <input type="radio" id="s1" name="rating" value="1"><label for="s1">★</label>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+              <div>
+                <label>Transparency</label>
+                <div class="star-input-group">
+                  <input type="radio" id="t5" name="transparency" value="5"><label for="t5">★</label>
+                  <input type="radio" id="t4" name="transparency" value="4"><label for="t4">★</label>
+                  <input type="radio" id="t3" name="transparency" value="3"><label for="t3">★</label>
+                  <input type="radio" id="t2" name="transparency" value="2"><label for="t2">★</label>
+                  <input type="radio" id="t1" name="transparency" value="1"><label for="t1">★</label>
+                </div>
+              </div>
+              <div>
+                <label>Responsiveness</label>
+                <div class="star-input-group">
+                  <input type="radio" id="rs5" name="responsiveness" value="5"><label for="rs5">★</label>
+                  <input type="radio" id="rs4" name="responsiveness" value="4"><label for="rs4">★</label>
+                  <input type="radio" id="rs3" name="responsiveness" value="3"><label for="rs3">★</label>
+                  <input type="radio" id="rs2" name="responsiveness" value="2"><label for="rs2">★</label>
+                  <input type="radio" id="rs1" name="responsiveness" value="1"><label for="rs1">★</label>
+                </div>
+              </div>
+              <div>
+                <label>Fairness</label>
+                <div class="star-input-group">
+                  <input type="radio" id="f5" name="fairness" value="5"><label for="f5">★</label>
+                  <input type="radio" id="f4" name="fairness" value="4"><label for="f4">★</label>
+                  <input type="radio" id="f3" name="fairness" value="3"><label for="f3">★</label>
+                  <input type="radio" id="f2" name="fairness" value="2"><label for="f2">★</label>
+                  <input type="radio" id="f1" name="fairness" value="1"><label for="f1">★</label>
+                </div>
+              </div>
+              <div>
+                <label>Financial Management</label>
+                <div class="star-input-group">
+                  <input type="radio" id="fm5" name="financial" value="5"><label for="fm5">★</label>
+                  <input type="radio" id="fm4" name="financial" value="4"><label for="fm4">★</label>
+                  <input type="radio" id="fm3" name="financial" value="3"><label for="fm3">★</label>
+                  <input type="radio" id="fm2" name="financial" value="2"><label for="fm2">★</label>
+                  <input type="radio" id="fm1" name="financial" value="1"><label for="fm1">★</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="r-experience">Your Experience *</label>
+              <textarea id="r-experience" name="experience" rows="5" placeholder="Describe your experience with this management company. Be specific about what happened, when, and how they responded. Focus on facts and behaviors." required></textarea>
+            </div>
+            <div class="form-group">
+              <label>Would you recommend this company to other HOAs?</label>
+              <div style="display: flex; gap: 1.5rem; margin-top: .5rem;">
+                <label style="font-weight: 400; display: flex; align-items: center; gap: .5rem; font-family: var(--font-ui);">
+                  <input type="radio" name="recommend" value="yes"> Yes
+                </label>
+                <label style="font-weight: 400; display: flex; align-items: center; gap: .5rem; font-family: var(--font-ui);">
+                  <input type="radio" name="recommend" value="no"> No
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--gold">Submit Review</button>
+          </form>
+        </div>
+
+        <!-- Tips -->
+        <div>
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <div class="card__title">Tips for a Helpful Review</div>
+            <ul style="margin: 1rem 0 0 1.25rem; font-family: var(--font-ui); font-size: .9rem; color: var(--gray-600); line-height: 1.9;">
+              <li>Be specific — vague reviews are less useful than specific ones</li>
+              <li>Include dates and timeframes when relevant</li>
+              <li>Focus on the management company's behavior, not the board's</li>
+              <li>Describe both positives and negatives if applicable</li>
+              <li>Do not include personal information about private individuals</li>
+              <li>Stick to your own direct experience</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card__title">Why Reviews Matter</div>
+            <p class="card__desc">HOA management companies are hired by boards, not by members — yet members live with the consequences every day. Reviews create accountability where there was none, give future members information before they buy into a community, and give honest companies a way to stand apart from bad actors.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Reviews -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Sample Reviews</p>
+      <h2>What Member Reviews Look Like</h2>
+      <p style="font-family: var(--font-ui); color: var(--gray-600); margin-bottom: 2rem;">The examples below show the format. Submit your own review above to be included.</p>
+
+      <div style="max-width: 800px;">
+
+        <div class="review-card">
+          <span class="sample-notice">Sample — Example Format</span>
+          <div class="review-company">Pacific Management Services</div>
+          <div class="review-meta">Hawaii · Reviewed March 2025</div>
+          <div class="star-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span>
+            <span style="font-family: var(--font-ui); font-size: .85rem; color: var(--gray-600); margin-left: .5rem;">2 / 5</span>
+          </div>
+          <div class="review-categories">
+            <div class="review-category"><span>Transparency</span><span class="review-category-stars">★★☆☆☆</span></div>
+            <div class="review-category"><span>Responsiveness</span><span class="review-category-stars">★★☆☆☆</span></div>
+            <div class="review-category"><span>Fairness</span><span class="review-category-stars">★★★☆☆</span></div>
+            <div class="review-category"><span>Financial Mgmt</span><span class="review-category-stars">★☆☆☆☆</span></div>
+          </div>
+          <p class="review-body">"Records requests took over 30 days to fulfill despite our state's 10-day requirement. When we asked about contractor invoices, we were told to direct all questions to the board. The board directed us back to management. We eventually escalated to the state regulatory body." — Example member review</p>
+          <div style="font-family: var(--font-ui); font-size: .8rem; color: var(--gray-400); margin-top: .75rem;">Would recommend: No</div>
+        </div>
+
+        <div class="review-card">
+          <span class="sample-notice">Sample — Example Format</span>
+          <div class="review-company">Cornerstone Community Management</div>
+          <div class="review-meta">Arizona · Reviewed January 2025</div>
+          <div class="star-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span style="font-family: var(--font-ui); font-size: .85rem; color: var(--gray-600); margin-left: .5rem;">5 / 5</span>
+          </div>
+          <div class="review-categories">
+            <div class="review-category"><span>Transparency</span><span class="review-category-stars">★★★★★</span></div>
+            <div class="review-category"><span>Responsiveness</span><span class="review-category-stars">★★★★★</span></div>
+            <div class="review-category"><span>Fairness</span><span class="review-category-stars">★★★★☆</span></div>
+            <div class="review-category"><span>Financial Mgmt</span><span class="review-category-stars">★★★★★</span></div>
+          </div>
+          <p class="review-body">"They have been genuinely transparent with us. When we requested records, they were provided within 5 days. They post meeting notices 14+ days in advance and publish meeting minutes within 2 weeks. After years of a dysfunctional prior management company, this has been a dramatic improvement." — Example member review</p>
+          <div style="font-family: var(--font-ui); font-size: .8rem; color: var(--gray-400); margin-top: .75rem;">Would recommend: Yes</div>
+        </div>
+
+        <div class="review-card">
+          <span class="sample-notice">Sample — Example Format</span>
+          <div class="review-company">Sunrise HOA Services</div>
+          <div class="review-meta">Florida · Reviewed February 2025</div>
+          <div class="star-rating">
+            <span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span>
+            <span style="font-family: var(--font-ui); font-size: .85rem; color: var(--gray-600); margin-left: .5rem;">1 / 5</span>
+          </div>
+          <div class="review-categories">
+            <div class="review-category"><span>Transparency</span><span class="review-category-stars">★☆☆☆☆</span></div>
+            <div class="review-category"><span>Responsiveness</span><span class="review-category-stars">★☆☆☆☆</span></div>
+            <div class="review-category"><span>Fairness</span><span class="review-category-stars">★☆☆☆☆</span></div>
+            <div class="review-category"><span>Financial Mgmt</span><span class="review-category-stars">★★☆☆☆</span></div>
+          </div>
+          <p class="review-body">"Contract renewal was completed without member input. Three vendors were 'considered' — all affiliated with the management company's principal. When we raised this at the board meeting, we were told it was 'the board's prerogative.' The same company has been managing us for 11 years without a competitive bid." — Example member review</p>
+          <div style="font-family: var(--font-ui); font-size: .8rem; color: var(--gray-400); margin-top: .75rem;">Would recommend: No</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="newsletter-strip">
+  <div class="container newsletter-strip__inner">
+    <div>
+      <h3>Stay Informed on HOA Accountability</h3>
+      <p>New reviews, resources, and HOA law updates — free.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="Your email address" aria-label="Email">
+      <button type="submit" class="btn btn--gold">Subscribe Free</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brand-name">HOA Member Rights</div>
+        <p class="footer__brand-desc">Your free resource for HOA laws, member rights, and dispute navigation.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Resources</div>
+        <ul class="footer__links">
+          <li><a href="/hoa/rights/">Know Your Rights</a></li>
+          <li><a href="/hoa/states/">Find Your State</a></li>
+          <li><a href="/hoa/attorneys/">Attorney Directory</a></li>
+          <li><a href="/hoa/documents/">Free Documents</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Information</div>
+        <ul class="footer__links">
+          <li><a href="/hoa/about/">About This Site</a></li>
+          <li><a href="/hoa/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer__disclaimer">
+    <div class="container">
+      <p><strong>Legal Disclaimer:</strong> The content on this site is for educational and informational purposes only and reflects the personal experiences and opinions of the author. Nothing on this site constitutes legal advice or creates an attorney-client relationship. HOA laws vary significantly by state and local jurisdiction. Always consult a licensed attorney in your state for advice about your specific situation.</p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__bottom-inner">
+        <span class="footer__copyright">© 2025 HOA Member Rights. All rights reserved.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
